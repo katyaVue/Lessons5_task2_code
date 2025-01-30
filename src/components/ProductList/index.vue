@@ -6,6 +6,7 @@
         :item-data="item"
         :card="card"
         @buyProduct="$emit('buyProduct', item.id)"
+        @deleteProduct="$emit('deleteProduct', item.id)"
     />
   </div>
 
