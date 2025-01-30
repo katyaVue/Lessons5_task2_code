@@ -1,6 +1,6 @@
 <template>
   <div>
-    <product-list :items-data="productItemsList" :card="card" @buyProduct="onBuy"/>
+    <product-list :items-data="productItemsList" :card="card" @buyProduct="onBuy" @deleteProduct="deleteProduct"/>
     <card-list  :card-items="card"/>
   </div>
 </template>
@@ -33,6 +33,12 @@ export default {
         this.card.push(item)
       }
     },
+    deleteProduct(itemId){
+      const index = this.card.findIndex(item => item.id === itemId);
+      if (index !== -1) {
+        this.card.splice(index, 1);
+      }
+    }
   }
 };
 </script>
